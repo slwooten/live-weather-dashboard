@@ -16,3 +16,20 @@ header {
 h1 {
     padding: 15px;
 }
+
+/* styling for form */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 100px;
+}
+
+/* styling for content on side */
+#sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+/* #search-btn {
+    max-width: 100px;
+} */
