@@ -3,6 +3,7 @@ var apiKey = 'ca3a4afc9bcd223f595f24041515a78d'
 var cityContainerEl = document.querySelector('#city-container');
 var searchBtn = document.querySelector('#search-btn');
 var searchInput = document.getElementById('search-input');
+var fiveDayHeader = document.getElementById('five-day-header');
 var dayOne = document.getElementById('day1');
 var dayTwo = document.getElementById('day2');
 var dayThree = document.getElementById('day3');
@@ -22,6 +23,7 @@ var getApis = function () {
         .then(function (data) {
             console.log('heres the data', data);
 
+            cityContainerEl.classList.add('city-box');
             var cityName = document.createElement('h3');
             var temp = document.createElement('p');
             var wind = document.createElement('p');
@@ -49,6 +51,17 @@ var getApis = function () {
                 })
                 .then(function (data) {
                     console.log(data);
+
+                    // adds header about 5 day forecast //
+                    fiveDayHeader.textContent = '5-Day Forecast';
+
+                    // adds class to format 5 day forecast containers //
+                    dayOne.classList.add('day-container');
+                    dayTwo.classList.add('day-container');
+                    dayThree.classList.add('day-container');
+                    dayFour.classList.add('day-container');
+                    dayFive.classList.add('day-container');
+
                     // creates heading for dates //
                     var dayOneDate = document.createElement('h4');
                     var dayTwoDate = document.createElement('h4');
