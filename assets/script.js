@@ -1,5 +1,5 @@
 var apiKey = 'ca3a4afc9bcd223f595f24041515a78d'
-// var searchInputEl = document.querySelector('#search-input');
+var content = document.getElementById('content');
 var cityContainerEl = document.querySelector('#city-container');
 var searchBtn = document.querySelector('#search-btn');
 var searchInput = document.getElementById('search-input');
@@ -15,6 +15,8 @@ var dayFive = document.getElementById('day5');
 var getApis = function () {
 
     var geoUrl = "https://api.openweathermap.org/data/2.5/weather/?&q=" + searchInput.value + "&appid=" + apiKey + "&units=imperial";
+
+    
 
     fetch(geoUrl)
         .then(function (response) {
@@ -53,7 +55,7 @@ var getApis = function () {
                     console.log(data);
 
                     // adds header about 5 day forecast //
-                    fiveDayHeader.textContent = '5-Day Forecast';
+                    fiveDayHeader.textContent = '5-Day Forecast:';
 
                     // adds class to format 5 day forecast containers //
                     dayOne.classList.add('day-container');
